@@ -1,0 +1,306 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f1f5f9;
+  background: #0b0f19;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #0b0f19;
+  --panel: #121827;
+  --panel-light: #182134;
+  --border: #273248;
+  --text: #f1f5f9;
+  --muted: #96a3b8;
+  --accent: #8b7cff;
+  --accent-hover: #a397ff;
+  --green: #39d6a3;
+  --red: #ff7185;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 15% 0%, #25204b55, transparent 42%),
+    radial-gradient(ellipse at 100% 20%, #102d3c44, transparent 38%),
+    var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 7px 22px #8b7cff30;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.app-container {
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.app-container > h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  background: linear-gradient(100deg, #ffffff 15%, #b8adff 65%, #72d9df);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.app-container > p {
+  margin: 12px 0 32px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.app-container section {
+  margin-top: 26px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #151d2e, #101624 75%);
+  box-shadow: 0 16px 45px #00000020;
+}
+
+.app-container section h2 {
+  margin: 0 0 24px;
+  font-size: 1.25rem;
+  letter-spacing: -0.4px;
+}
+
+.app-container form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.app-container label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.app-container input,
+.app-container select,
+.app-container textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid #303c53;
+  border-radius: 10px;
+  background: #0c1220;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.app-container input:focus,
+.app-container select:focus,
+.app-container textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #8b7cff20;
+  outline: none;
+}
+
+.app-container input::placeholder,
+.app-container textarea::placeholder {
+  color: #65728a;
+}
+
+.app-container input[type="date"] {
+  color-scheme: dark;
+}
+
+.app-container textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.app-container form > button {
+  width: fit-content;
+  min-width: 180px;
+  align-self: end;
+}
+
+.error-message {
+  padding: 14px 16px;
+  border: 1px solid #a83c55;
+  border-radius: 12px;
+  background: #411b2a;
+  color: #ffb6c2;
+  line-height: 1.6;
+}
+
+.applications-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.application-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #2a354b;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #1a2335, #121a29);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.application-card:hover {
+  transform: translateY(-3px);
+  border-color: #7063d9;
+  box-shadow: 0 14px 30px #00000025;
+}
+
+.application-card h3 {
+  margin: 0 0 16px;
+  color: #c5bcff;
+  font-size: 1.2rem;
+  overflow-wrap: anywhere;
+}
+
+.application-card p {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.application-card p strong {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.application-card label {
+  margin-top: 20px;
+}
+
+.application-card select {
+  cursor: pointer;
+}
+
+.application-card > button {
+  margin-top: 16px;
+  border: 1px solid #713746;
+  background: #341d2a;
+  color: #ff9aaa;
+}
+
+.application-card > button:hover {
+  border-color: #a94760;
+  background: #512335;
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    width: min(100% - 24px, 560px);
+    padding-top: 32px;
+  }
+
+  .app-container section {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .app-container form,
+  .applications-list {
+    grid-template-columns: 1fr;
+  }
+
+  .app-container form > button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Final layout polish */
+.app-container {
+  width: min(1200px, calc(100% - 40px));
+  padding-top: 60px;
+}
+
+.app-container > h1 {
+  padding: 8px 0;
+  line-height: 1.25;
+  overflow: visible;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.app-container > p {
+  margin-top: 10px;
+  margin-bottom: 36px;
+}
+
+.app-container section {
+  padding: 32px;
+  margin-top: 24px;
+}
+
+.app-container section h2 {
+  margin-bottom: 28px;
+}
+
+.application-card {
+  align-self: start;
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    width: calc(100% - 24px);
+    padding-top: 32px;
+  }
+
+  .app-container section {
+    padding: 20px;
+  }
+}
